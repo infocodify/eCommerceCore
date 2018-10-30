@@ -34,9 +34,14 @@ namespace eCommerceCore
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            //services.AddDbContext<ApplicationDbContext>(options =>
+            //    options.UseSqlServer(
+            //        Configuration.GetConnectionString("DefaultConnection")));
+
+            //in memory db, data vailable until app is running
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+            options.UseInMemoryDatabase("eCommerceInMemoryDB"));
+
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
