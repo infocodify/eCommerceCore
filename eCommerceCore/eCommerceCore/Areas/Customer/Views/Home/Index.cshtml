@@ -1,0 +1,31 @@
+﻿@model List<eCommerceCore.Models.Products>
+
+<br /><br />
+<div class="row">
+    @foreach(var product in Model.OrderByDescending(product => product.DateCreated))
+    { 
+        <div class="col-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">
+                        <label style="font-size:23px;color:steelblue;">@product.Name</label>
+                    </h4>
+                </div>
+                <figure>
+                    <img class="card-img-top" src="@product.Image" style="height:250px;" alt="Card Image" />
+                    <figcaption></figcaption>
+                </figure>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <label style="font-size:20px; color:#a51313;"><b>@product.Price</b>&#36;</label>
+                        </div>
+                        <a class="btn btn-success pull-right btn-outline-info">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    }
+</div>
+
+

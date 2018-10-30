@@ -1,0 +1,26 @@
+﻿@model eCommerceCore.Models.SpecialTags
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<br />
+<h2 class="text-info">Edit Special Tags</h2>
+
+<form method="post" asp-action="Edit" style="border:1px solid green;padding:30px;border-radius:10px;">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input class="form-control" asp-for="Name" placeholder="Enter Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <input type="submit" class="btn btn-primary" asp-route-id="@Model.Id" value="Update" />
+    <a asp-action="Index" class="btn btn-success">Back To List</a>
+</form>
+
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

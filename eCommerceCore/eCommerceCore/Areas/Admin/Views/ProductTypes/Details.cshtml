@@ -1,0 +1,22 @@
+﻿@model eCommerceCore.Models.ProductTypes
+@{
+    ViewData["Title"] = "Details";
+}
+
+<br />
+<h2 class="text-info">Product Type Details</h2>
+
+<form method="post" asp-action="Edit" style="border:1px solid green;padding:30px;border-radius:10px;">
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+
+        <input class="form-control" asp-for="Name" disabled>
+
+    </div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-success">Back To List</a>
+</form>
+
+
+

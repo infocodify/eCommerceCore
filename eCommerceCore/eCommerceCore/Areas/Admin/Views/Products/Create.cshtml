@@ -1,0 +1,60 @@
+﻿@model eCommerceCore.Models.ViewModel.ProductsViewModel
+@using eCommerceCore.Extensions
+@{
+    ViewData["Title"] = "Create";
+}
+
+<br />
+<h2 class="text-info">Create Product </h2>
+
+<form method="post" enctype="multipart/form-data" style="border:1px solid green;padding:30px;border-radius:10px;">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Products.Name">Name</label>
+        <input class="form-control" asp-for="Products.Name" placeholder="Enter Name">
+        <span asp-validation-for="Products.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Products.Price">Price</label>
+        <input class="form-control" asp-for="Products.Price" placeholder="Enter Price">
+        <span asp-validation-for="Products.Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Products.Image">Image</label>
+        <input type="file" name="files" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProductTypes">ProductTypes</label>
+        <select class="form-control" asp-for="@Model.Products.ProductTypeId" asp-items="Model.ProductTypes.ToSelectListItem(Model.Products.ProductTypeId)"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SpecialTags">SpecialTags</label>
+        <select class="form-control" asp-for="@Model.Products.SpecialTagsID" asp-items="Model.SpecialTags.ToSelectListItem(Model.Products.SpecialTagsID)"></select>
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Products.ShadeColor">ShadeColor</label>
+        <input class="form-control" asp-for="Products.ShadeColor" placeholder="Enter ShadeColor">
+        <span asp-validation-for="Products.ShadeColor" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Products.Available">ShadeColor</label>
+        <input type="checkbox" class="form-control" asp-for="Products.Available">
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Create" />
+    <a asp-action="Index" class="btn btn-success">Back To List</a>
+</form>
+
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
