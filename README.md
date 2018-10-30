@@ -12,8 +12,8 @@ f.  Azure Web Apps Services
 
 a.  Tags \
 b.  Special Offers \
-c.  Products \
+c.  Products
 
-Coming Soon: Product Details/ Shopping Card/ Admin Autentication and Authorization \
+Coming Soon: Product Details/ Shopping Card/ Admin Autentication and Authorization
 
 Try Yourself: http://ecommercecore.azurewebsites.net/
