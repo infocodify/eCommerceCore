@@ -4,7 +4,7 @@
 a.  Asp.Net Core 2/2.1 MVC \
 b.  Dependency Injection \
 c.  BootStrap 4.1.2 \
-d.  jQuery Validation
+d.  jQuery Validation \
 e.  Sql Server for the Database \
 f.  Azure Web Apps Services
 
