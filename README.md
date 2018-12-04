@@ -14,6 +14,4 @@ a.  Tags \
 b.  Special Offers \
 c.  Products
 
-Coming Soon: Shopping Cart/ Admin Authentication and Authorization
-
 Try Yourself: http://ecommercecore.azurewebsites.net/
